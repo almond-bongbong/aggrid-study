@@ -27,9 +27,7 @@ export default function GridTable() {
   useEffect(() => {
     fetch('/mock/list.json')
       .then((res) => res.json())
-      .then((data) => {
-        setRowData(data);
-      });
+      .then(setRowData);
   }, []);
 
   return (
@@ -49,6 +47,7 @@ export default function GridTable() {
           rowData={rowData}
           columnDefs={columnDefs}
           getRowId={(params) => params.data.id}
+          loading={rowData.length === 0}
         />
       </div>
     </>
