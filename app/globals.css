@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "ag-grid-community/styles/ag-theme-quartz.css";
 
 :root {
   --background: #ffffff;
@@ -21,5 +22,20 @@
 
 body {
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.6s ease-out both;
 }

@@ -32,7 +32,11 @@ export default function EditRoleSelect({
   };
 
   return (
-    <select value={value} onChange={handleChange}>
+    <select
+      value={value}
+      onChange={handleChange}
+      className="h-full w-full rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700 focus:outline-none"
+    >
       {ROLES.map((role) => (
         <option key={role.value} value={role.value}>
           {role.label}

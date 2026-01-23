@@ -33,3 +33,8 @@ cell을 edit할때 커스텀 edit 컴포넌트를 사용하여 처리한다.
 ### cell edit + post + refetch
 
 cell edit이 완료되는 순간 post
+
+### cell edit + post + refetch (optimistic update)
+
+cell edit이 완료되는 순간 post 그리고 ui를 낙관적으로 update하여 사용자 ux를 극대화 한다.
+에러케이스에 대한 fallback 처리도 되어야 한다.
