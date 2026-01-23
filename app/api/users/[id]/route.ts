@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import type { ListItem } from '@/app/type';
 import { updateUser, wait } from '../store';
 
+export const preferredRegion = 'icn1';
+
 export async function POST(
   request: Request,
   context: { params: Promise<{ id: string }> },
