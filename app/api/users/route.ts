@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getUsers, wait } from './store';
 
+export const runtime = 'edge';
 export const preferredRegion = 'icn1';
 
 export async function GET() {
