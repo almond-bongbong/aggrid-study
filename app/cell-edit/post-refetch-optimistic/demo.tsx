@@ -15,7 +15,8 @@ import { LogPanel, type LogEntry } from '@/app/component/log-panel';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-const createLogId = () => `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+const createLogId = () =>
+  `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 const QUERY_KEY = ['users'];
 
 const fetchUsers = async () => {
@@ -77,7 +78,11 @@ export default function OptimisticPostRefetchDemo() {
   const [failNext, setFailNext] = useState(false);
   const queryClient = useQueryClient();
 
-  const { data: rowData = [], isLoading, isFetching } = useQuery({
+  const {
+    data: rowData = [],
+    isLoading,
+    isFetching,
+  } = useQuery({
     queryKey: QUERY_KEY,
     queryFn: fetchUsers,
   });
@@ -102,9 +107,9 @@ export default function OptimisticPostRefetchDemo() {
         type: 'immutable',
         time: new Date().toLocaleTimeString('en-US', { hour12: false }),
         title: `Optimistic update applied (row ${variables.id})`,
-        detail: `field: ${Object.keys(variables.changes)[0]} → ${Object.values(
-          variables.changes,
-        )[0]}`,
+        detail: `field: ${Object.keys(variables.changes)[0]} → ${
+          Object.values(variables.changes)[0]
+        }`,
       };
       setLogs((prev) => [...prev, entry].slice(-12));
 
@@ -126,7 +131,9 @@ export default function OptimisticPostRefetchDemo() {
     },
     onSuccess: (data, variables) => {
       queryClient.setQueryData<ListItem[]>(QUERY_KEY, (current) =>
-        current ? current.map((row) => (row.id === data.id ? data : row)) : current,
+        current
+          ? current.map((row) => (row.id === data.id ? data : row))
+          : current,
       );
 
       const entry: LogEntry = {
@@ -190,7 +197,9 @@ export default function OptimisticPostRefetchDemo() {
       <section className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Demo</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+              Demo
+            </p>
             <p className="mt-1 text-sm text-slate-600">
               편집 즉시 UI를 업데이트하고 실패 시 이전 상태로 롤백합니다.
             </p>
@@ -226,7 +235,7 @@ export default function OptimisticPostRefetchDemo() {
               stopEditingWhenCellsLoseFocus
               getRowId={(params) => String(params.data.id)}
               onCellEditRequest={handleCellEditRequest}
-              loading={isLoading || isFetching || mutation.isPending}
+              loading={isLoading}
             />
           </div>
         </div>

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "ag-grid-community/styles/ag-theme-quartz.css";
+@import "prismjs/themes/prism-tomorrow.css";
 
 :root {
   --background: #ffffff;
@@ -38,4 +39,13 @@ body {
 
 .animate-rise {
   animation: rise 0.6s ease-out both;
+}
+
+pre[class*="language-"],
+code[class*="language-"] {
+  background: transparent;
+}
+
+pre[class*="language-"] {
+  margin: 0;
 }

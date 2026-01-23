@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import CodeBlock from '@/app/component/code-block';
 
 export default function CasePage({
   title,
@@ -42,9 +43,11 @@ export default function CasePage({
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
               Code focus
             </p>
-            <pre className="mt-4 max-h-[70vh] overflow-auto rounded-xl bg-slate-900/60 p-4 text-xs leading-relaxed text-slate-200">
-              <code>{code}</code>
-            </pre>
+            <CodeBlock
+              code={code}
+              language="tsx"
+              className="mt-4 max-h-[70vh] overflow-auto rounded-xl bg-slate-900/60 p-4 text-xs leading-relaxed text-slate-200"
+            />
           </aside>
         </div>
       </div>
