@@ -31,6 +31,12 @@ const cases = [
     href: '/cell-edit/post-refetch-optimistic',
     tag: 'Optimistic',
   },
+  {
+    title: 'Cell edit · IME Enter handling',
+    description: '한글 입력(IME) Enter 종료 문제와 해결 방법을 소개합니다.',
+    href: '/cell-edit/ime-enter',
+    tag: 'IME',
+  },
 ];
 
 export default function Home() {
