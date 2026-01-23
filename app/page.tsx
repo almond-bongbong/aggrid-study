@@ -25,6 +25,12 @@ const cases = [
     href: '/cell-edit/post-refetch',
     tag: 'Network',
   },
+  {
+    title: 'Cell edit · Post + refetch (optimistic)',
+    description: '낙관적 업데이트와 실패 롤백 흐름을 확인합니다.',
+    href: '/cell-edit/post-refetch-optimistic',
+    tag: 'Optimistic',
+  },
 ];
 
 export default function Home() {

@@ -18,6 +18,10 @@ export const handlers = [
 
   http.post('/api/users/:id', async ({ params, request }) => {
     await delay(API_DELAY_MS);
+    if (request.headers.get('x-simulate-error') === '1') {
+      return HttpResponse.json({ message: 'Simulated error' }, { status: 500 });
+    }
+
     const id = Number(params.id);
     if (Number.isNaN(id)) {
       return new HttpResponse(null, { status: 400 });
