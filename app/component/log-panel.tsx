@@ -26,7 +26,7 @@ export function LogPanel({
   hint?: string;
 }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm backdrop-blur">
+    <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="flex items-start justify-between">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-slate-500">Change log</p>

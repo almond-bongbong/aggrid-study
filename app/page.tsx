@@ -41,10 +41,10 @@ const cases = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_#fff7ed,_#f1f5f9_45%,_#e0f2fe_100%)] text-slate-900">
+    <main className="min-h-screen bg-slate-50 text-slate-900">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-14 lg:px-10">
         <header className="space-y-4 animate-rise">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-500">
             AG Grid Study
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -62,13 +62,13 @@ export default function Home() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative overflow-hidden rounded-3xl border border-white/60 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:border-slate-200 hover:shadow-lg animate-rise"
+              className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md animate-rise"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <div className="absolute inset-0 bg-[linear-gradient(120deg,_rgba(255,255,255,0.1),_rgba(14,116,144,0.08))] opacity-0 transition group-hover:opacity-100" />
               <div className="relative flex h-full flex-col justify-between gap-6">
                 <div>
-                  <span className="inline-flex rounded-full bg-slate-900 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-white">
+                  <span className="inline-flex rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-600">
                     {item.tag}
                   </span>
                   <h2 className="mt-4 text-xl font-semibold text-slate-900">
@@ -84,7 +84,7 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur">
+        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.25em] text-slate-500">
